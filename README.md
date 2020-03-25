@@ -1,5 +1,9 @@
 # harness
 
+A script to continually sync and merge tutorial content, theme, and Hugo config, and then start Hugo in 'serve' mode.
+
+## Usage
+
 Assuming the following directory layout:
 
 ```terminal
