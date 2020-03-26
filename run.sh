@@ -16,9 +16,9 @@ trap "exit" INT
 (sleep 2 && hugo serve -D) &
 
 while true; do
-  rsync -avz ${SRC_CONTENT_PATH} .
-  rsync -avz ${SRC_THEME_PATH} themes/
-  rsync -v ${SRC_CONFIG_PATH} config.yml
+  rsync -arvz --delete-before ${SRC_CONTENT_PATH} .
+  rsync -arvz --delete-before ${SRC_THEME_PATH} themes/
+  rsync -rv --delete-before ${SRC_CONFIG_PATH} config.yml
 
   fswatch --one-event \
     ${SRC_THEME_PATH} \
